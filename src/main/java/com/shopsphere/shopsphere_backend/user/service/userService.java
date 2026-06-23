@@ -1,8 +1,10 @@
-package com.shopsphere.shopsphere_backend.service;
+package com.shopsphere.shopsphere_backend.user.service;
 
-import com.shopsphere.shopsphere_backend.Repository.userRepo;
-import com.shopsphere.shopsphere_backend.model.User;
+import com.shopsphere.shopsphere_backend.user.Repository.userRepo;
+import com.shopsphere.shopsphere_backend.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +12,14 @@ import java.util.List;
 public class userService {
     @Autowired
     private userRepo userRepo;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     public List<User> getUsers() {
         return  userRepo.findAll();
     }
 
     public User addUser(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepo.save(user);
     }
 

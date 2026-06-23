@@ -1,9 +1,8 @@
-package com.shopsphere.shopsphere_backend.controller;
+package com.shopsphere.shopsphere_backend.user.controller;
 
-import com.shopsphere.shopsphere_backend.model.User;
-import com.shopsphere.shopsphere_backend.service.userService;
+import com.shopsphere.shopsphere_backend.user.model.User;
+import com.shopsphere.shopsphere_backend.user.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.shopsphere.shopsphere_backend.model;
+package com.shopsphere.shopsphere_backend.user.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="app_user")
-@Component
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
